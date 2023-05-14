@@ -1,0 +1,521 @@
+#particles-js {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+}
+body {
+  z-index: 99;
+  background: #000000;
+}
+
+.contenido-descripcion {
+  width: 60%;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  color: #ffffff;
+}
+.descripcion {
+  display: flex;
+}
+.contenido-descripcion .titulo {
+  text-transform: uppercase;
+  letter-spacing: 5px;
+}
+
+.contenido-descripcion .titulo span:first-child {
+  font-size: 50px;
+  display: block;
+  font-weight: 300;
+}
+
+.contenido-descripcion .titulo span:last-child {
+  font-weight: 900;
+  font-size: 100px;
+}
+
+.contenido-descripcion .btn-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 25px 0;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #3dff3e;
+  border: 1px solid #555555;
+  animation: parpadeo 2s linear infinite;
+  transition: 0.7s ease;
+}
+
+.contenido-descripcion .btn-link:hover {
+  border: 1px solid #3dff3e;
+  animation: none;
+}
+
+#start {
+  width: 100%;
+  height: 10%;
+  background: rgb(199, 12, 12);
+  display: flex;
+  flex-direction: column;
+}
+.imgLogo {
+  display: flex;
+  width: 30%;
+  height: 15%;
+}
+.container {
+  max-width: 100%;
+  height: 80%;
+  margin: auto;
+}
+.imgTrainer {
+  width: 30%;
+  height: 15%;
+  display: block;
+  margin: auto;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+}
+.droplists {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  padding: 1% 2% 1% 2%;
+  width: 250px;
+  margin: 2% 2% 2% 2%;
+  border-radius: 0.6em;
+  -webkit-appearance: none;
+  background-color: rgb(243, 229, 169);
+  text-align: center;
+  background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23007CB2%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E),
+    linear-gradient(to bottom, #d9b740 0%, rgb(243, 239, 3) 100%);
+  background-repeat: no-repeat, repeat;
+  background-position: right 0.7em top 50%, 0 0;
+  background-size: 0.65em auto, 100%;
+}
+#searchBar {
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.3;
+  padding: 1% 2% 1% 2%;
+  width: 500px;
+  box-sizing: border-box;
+  margin: 2% 2% 2% 2%;
+  border: 1px solid #aaa;
+  border-radius: 0.3em;
+}
+.text {
+  padding: 2% 2% 1% 2%;
+  font-size: 25px;
+  margin-bottom: 0%;
+}
+.container h5 {
+  color: #ffffff;
+}
+/* CENTRAR  */
+.selectArea {
+  text-align: center;
+}
+#welcome {
+  justify-items: center;
+  border: none;
+}
+#contentOfCards {
+  text-align: center;
+  padding: 1% 1% 1% 1%;
+}
+/* Estilo para carta de Pokémon */
+.card-style {
+  display: inline-block;
+  background-color: #000000;
+  width: 15em;
+  height: 22em;
+  margin: 20px 25px 20px 25px;
+  padding: 20px 20px;
+  justify-items: center;
+  text-align: center;
+  border-radius: 10px;
+  font-family: "Lato", sans-serif;
+  box-shadow: 0 4px 8px 0 rgba(27, 27, 27, 0.2),
+    0 6px 20px 0 rgba(27, 27, 27, 0.19);
+}
+.card-style h3 {
+  margin: 5px;
+  text-align: center;
+}
+.card-style img {
+  width: 12em;
+  height: 12em;
+  padding: 22px 28px 9px 20px;
+}
+/* Modal de cada Pokémon individual */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 65px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  font-family: "Lato", sans-serif;
+}
+/* Modal Content */
+.modal-content {
+  background-color: rgb(255, 225, 217);
+  font-family: "Lato", sans-serif;
+  margin: auto;
+  padding: 0px;
+  width: 40%;
+  height: 90%;
+  border-radius: 38px 38px 38px 38px;
+  -moz-border-radius: 38px 38px 38px 38px;
+  -webkit-border-radius: 38px 38px 38px 38px;
+  border: 5px solid #eeff00;
+  box-shadow: 0 4px 8px 0 rgba(27, 27, 27, 0.2),
+    0 6px 20px 0 rgba(27, 27, 27, 0.19);
+  color: #424242;
+}
+.modal-img {
+  width: 150px;
+  height: 150px;
+}
+.resistant img {
+  width: 3em;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.resistant-p {
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  width: 180px;
+  height: 24px;
+  text-align: center;
+  color: #424242;
+  margin: auto;
+  font-family: "Lato", sans-serif;
+}
+/*Texto de las descripciones en el modal */
+.pokemon-description {
+  transition: all 0.4 ease;
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #b90d0d;
+  padding: 0% 5% 2% 5%;
+  font-weight: 600;
+}
+.pokemon-description p {
+  text-align: left;
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+}
+.pokemon-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  width: 180px;
+  height: 24px;
+  text-align: center;
+  color: #424242;
+  background: #fed314;
+  box-sizing: border-box;
+  margin: auto;
+  border-radius: 5px;
+  flex-direction: column;
+}
+.imgType img {
+  position: relative;
+  top: 40px;
+  left: -160px;
+  width: 3em;
+  height: 3em;
+}
+/* X de cerrar el modal*/
+.close {
+  position: relative;
+  font-size: 52px;
+  top: 16px;
+  left: 186px;
+  cursor: pointer;
+  color: #ffffff;
+  text-shadow: 0 0 5px rgb(255, 51, 0), 0 0 10px rgb(255, 123, 0),
+    0 0 20px rgb(255, 8, 0), 0 0 40px rgb(255, 60, 0), 0 0 80px rgb(255, 72, 0),
+    0 0 90px rgb(255, 145, 0), 0 0 100px rgb(255, 115, 0),
+    0 0 140px rgb(255, 123, 0), 0 0 180px rgb(255, 94, 0);
+}
+.close:hover,
+.close:focus {
+  color: #0a4270;
+  text-decoration: none;
+  cursor: pointer;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+footer p {
+  position: relative;
+  left: 7px;
+}
+.social-icons a {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.social-icons a:hover {
+  color: #f1f1f1;
+}
+
+.fa-github:before {
+  content: "\f09b";
+}
+
+.fa-instagram:before {
+  content: "\f16d";
+}
+
+.fa-linkedin:before {
+  content: "\f08c";
+}
+
+.text-aling {
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 90%;
+  color: #424242;
+}
+.colorIcon {
+  filter: invert(357%) sepia(109%) saturate(211%) hue-rotate(3958deg)
+    brightness(-106%) contrast(689%);
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.colorIcon:hover {
+  filter: invert(11%) sepia(2%) saturate(9%) hue-rotate(332deg) brightness(90%)
+    contrast(85%);
+}
+h3 {
+  color: #424242;
+  font-size: 1.2em;
+  text-align: center;
+  width: 180px;
+  height: 28px;
+  text-align: center;
+  color: #424242;
+  background: #fed314;
+  box-sizing: border-box;
+  margin: auto;
+  border-radius: 5px;
+  flex-direction: column;
+}
+h5 {
+  color: #3b3838;
+  font-size: 1.8em;
+  text-align: center;
+  width: 180px;
+  height: 28px;
+  text-align: center;
+  margin: auto;
+}
+.modal-p {
+  font-size: 1.3em;
+  text-align: center;
+  line-height: 30px;
+  font-weight: bold 700;
+  color: #2c2c2c;
+  font-family: "Lato", sans-serif;
+  font-weight: 600;
+}
+
+.contenido-descripcion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 250px;
+}
+
+.a img {
+  width: 250px;
+  height: 250px;
+}
+.video-container iframe {
+  position: relative;
+  left: 450px;
+}
+iframe {
+  margin-top: 5px;
+}
+@media screen and (max-width: 980px) {
+  .video-container {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 980px) {
+  .contenido-descripcion .titulo span:first-child {
+    font-size: 70px;
+    display: block;
+    font-weight: 300;
+  }
+  .video-container iframe {
+    position: relative;
+    left: 0px;
+  }
+  #welcome h5 {
+    font-size: 15px;
+  }
+  .a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 100px;
+    font-size: 15px;
+  }
+
+  .a img {
+    width: 50px;
+    height: 50px;
+  }
+  .imgLogo {
+    width: 60%;
+  }
+  #start {
+    width: 102%;
+    padding: -1% 0% 10% 0%;
+  }
+  #searchBar {
+    padding: 3% 3% 2% 2%;
+    width: 455px;
+    font-size: 30px;
+  }
+  .container {
+    max-width: 100%;
+    height: 80%;
+  }
+  #welcome {
+    flex-direction: column-reverse;
+  }
+  .imgTrainer {
+    width: 65%;
+    height: 50%;
+    text-align: center;
+    padding: 0% 8% 0% 7%;
+  }
+  #contentOfCards {
+    text-align: center;
+    padding: 2% 5% 2% 5%;
+  }
+  .card-style {
+    width: 21em;
+    height: 30em;
+    margin: 0px 32px 22px 18px;
+    padding: 27px 20px 15px 20px;
+  }
+  .card-style img {
+    width: 17em;
+    height: 15em;
+    padding: 22px 28px 9px 20px;
+  }
+  h3 {
+    font-size: 13px;
+    width: 279px;
+    height: 31px;
+    border-radius: -11px;
+    margin: 5px;
+  }
+  h5 {
+    color: #3b3838;
+    font-size: 4.5em;
+    text-align: center;
+    width: 323px;
+    height: 76px;
+    margin: auto;
+  }
+  .modal-img {
+    width: 20em;
+    height: 20em;
+  }
+  .pokemon-number {
+    font-size: 1.9em;
+    width: 279px;
+    height: 31px;
+    border-radius: -11px;
+  }
+  .close {
+    font-size: 75px;
+    top: 32px;
+    left: 300px;
+  }
+  .imgType img {
+    width: 6em;
+    height: 6em;
+    top: 6em;
+    left: -17em;
+  }
+  .timeson-description {
+    padding: 1%;
+  }
+  .modal-content {
+    width: 49em;
+  }
+  .pokemon-description {
+    transition: all 0.4 ease;
+    font-family: "Lato";
+    padding: 0% 8% 0% 11%;
+  }
+  .pokemon-description p {
+    margin: 44px;
+    font-size: 2em;
+  }
+  .resistant-p {
+    display: flex;
+    font-weight: bold;
+    width: 5em;
+    height: -1em;
+    font-size: 1.4em;
+    margin: auto;
+  }
+  .resistant img {
+    width: 6em;
+    margin-left: 13px;
+    margin-right: 13px;
+  }
+  .searchClass {
+    width: 250px;
+    margin-top: 20px;
+  }
+  .droplists {
+    margin-top: 26px;
+    width: 455px;
+    padding: 3% 3% 2% 2%;
+    font-size: 30px;
+  }
+}

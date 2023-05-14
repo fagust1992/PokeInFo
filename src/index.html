@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pokemon Info1</title>
+    <!--Fuentes / iconos/ css -->
+    <script
+      src="https://kit.fontawesome.com/7ab99cc4ec.js"
+      class="icon"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://www.pngall.com/wp-content/uploads/5/Pokemon-Pikachu-PNG-Image-File.png"
+    />
+
+    <head>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-Z7DR0g6wpjO7O9Jfn94dcdd7La8lKj/V87J5cLk5u5Q2P4t+y4Jq3uIzQcZ7VeyRkvazS1FVlYDnKwp7l33f4w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+      />
+    </head>
+  </head>
+  <body>
+    <div id="particles-js"></div>
+    <!--cursor para pokebola -->
+    <!-- Título y descripción -->
+    <div class="contenido-descripcion">
+      <div class="a">
+        <div>
+          <h1 class="titulo">
+            <span>PokeInfo</span>
+          </h1>
+          <article class="descripcion">
+            <p>
+              nuestro propósito es brindar a los fanáticos de Pokémon la
+              información más completa y actualizada sobre estos personajes
+              icónicos. Desde estadísticas detalladas sobre cada Pokémon hasta
+              información sobre sus tipos, habilidades y movimiento
+            </p>
+          </article>
+        </div>
+        <div>
+          <img src="img/pokeball.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <header>
+      <!--header // Inicio // Logo-->
+      <section id="start">
+        <div id="root"></div>
+        <!--Área de selects e input-->
+        <div class="selectArea">
+          <select id="selectType" class="droplists">
+            <option value="">Tipo</option>
+            <option value="Water">Agua</option>
+            <option value="Fire">Fuego</option>
+            <option value="Normal">Normal</option>
+            <option value="Grass">Planta</option>
+            <option value="Electric">Eléctrico</option>
+            <option value="Ice">Hielo</option>
+            <option value="Fighting">Pelea</option>
+            <option value="Poison">Veneno</option>
+            <option value="Ground">Tierra</option>
+            <option value="Flying">Volador</option>
+            <option value="Psychic">Psíquicos</option>
+            <option value="Bug">Bicho</option>
+            <option value="Rock">Roca</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Dragon">Dragón</option>
+          </select>
+          <select id="selectOrder" class="droplists">
+            <option value="" disabled selected>Orden</option>
+            <option value="aToZ">A - Z</option>
+            <option value="zToA">Z - A</option>
+          </select>
+          <!--buscador por debilidad -->
+          <select id="selectWeak" class="droplists">
+            <option value="">Debilidad</option>
+            <option value="Water">Agua</option>
+            <option value="Fire">Fuego</option>
+            <option value="Grass">Planta</option>
+            <option value="Electric">Eléctrico</option>
+            <option value="Ice">Hielo</option>
+            <option value="Fighting">Pelea</option>
+            <option value="Poison">Veneno</option>
+            <option value="Ground">Tierra</option>
+            <option value="Flying">Volador</option>
+            <option value="Psychic">Psíquicos</option>
+            <option value="Bug">Bicho</option>
+            <option value="Rock">Roca</option>
+            <option value="Ghost">Fantasma</option>
+            <option value="Dragon">Dragón</option>
+            <option value="Dark">Siniéstro</option>
+            <option value="Steel">Metal</option>
+            <option value="Fairy">Hada</option>
+          </select>
+          <!-- Buscador de Pokemon -->
+          <input type="text" id="searchBar" placeholder="Busca tu Pokémon" /><i
+            class="searchClass"
+          ></i>
+        </div>
+      </section>
+
+      <div class="container">
+        <!--Bienvenida -->
+        <section id="welcome">
+          <h5>Extra Pelicula</h5>
+          <div class="video-container">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/by96zpKjbLw"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </section>
+      </div>
+      <!--Contendor de Tarjetas -->
+      <section id="contentOfCards"></section>
+    </header>
+    <footer>
+      <p>Francisco August</p>
+      <div class="social-icons">
+        <a href="https://github.com/fagust1992"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a href="https://www.instagram.com//francisco_august_rincon/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://www.linkedin.com/in/francisco-agust/"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+      </div>
+    </footer>
+
+    <script src="main.js" type="module"></script>
+    <script src="
+    https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js
+    "></script>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
+7
