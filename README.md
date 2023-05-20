@@ -11,7 +11,6 @@ PokeInfo es una aplicación web que permite a los usuarios filtrar y obtener inf
 ## Instrucciones de instalación
 1. Clona este repositorio en tu máquina local.
 2. ejecutalo en tu editor de codigo 
-3. instala las dependencias npm install
 4. ejecuta  el comando npm start 
 
 
