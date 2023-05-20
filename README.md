@@ -17,6 +17,6 @@ PokeInfo es una aplicación web que permite a los usuarios filtrar y obtener inf
 
 ![Likeme-Dogs](https://github.com/fagust1992/PokeInfo/blob/master/src/img/poke-info.jpg?raw=true?raw=true")
 
-##Galeria
+Galeria
 
 ![Likeme-Dogs](https://github.com/fagust1992/PokeInfo/blob/master/src/img/poke-info2.jpg?raw=true?raw=true?raw=true")
