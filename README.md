@@ -1,7 +1,5 @@
 # PokeInfo
-Esta aplicación web de PokeInfo te permite explorar y obtener información detallada sobre diferentes Pokémon. Puedes filtrar los Pokémones según su nombre, tipo y habilidad, y también puedes ordenarlos según tus preferencias. Además, puedes agregar tus Pokémon favoritos a una lista personalizada y eliminar los Pokémon previamente agregados.
-
-## Características
+La página de Pokémon que desarrollé es una aplicación web que permite a los usuarios filtrar y obtener información detallada sobre los Pokémon. Los usuarios pueden utilizar filtros como el nombre, tipo y habilidad para encontrar Pokémon específicos. La aplicación muestra una lista de Pokémon que coinciden con los criterios de filtrado, proporcionando su nombre, imagen y detalles relevantes. 
 - Filtrar por nombre, tipo y habilidad
 - Ordenar Pokémon según preferencias
 - Explora información detallada de los Pokémones y sus caractericas
